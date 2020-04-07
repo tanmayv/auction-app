@@ -1,6 +1,8 @@
 import { GroceryGetter, JunkHauler, CopAttractor } from './vehicles';
 import { SimpleAPI } from './simple-api'
 import * as express from 'express'
+import { AuctionItem } from './auction-item';
+import { resolveNaptr } from 'dns';
 
 abstract class App {
 
@@ -22,9 +24,23 @@ abstract class App {
 	static start_server(): void {
 		
 		const server = express()
+		server.use(express.json())
 		server.get('/make-vehicle', App.make_vehicle)
+		server.post('/auctionItem', App.createAuctionItem)
+		server.get('/auctionItem', App.getAuctionItems)
 		server.get('/', (req, res) => { res.send('call /make-vehicle to create a vehicle') })
 		server.listen(App.port, () => { console.log('Listening on port ' + App.port) })
+	}
+
+	static createAuctionItem(request: express.Request, response: express.Response): void {
+		console.log(request.body);
+		SimpleAPI.createAuctionItem(request.body).then((auctionItem: AuctionItem) => {
+			response.json(auctionItem);
+		});
+	}
+
+	static getAuctionItems(request: express.Request, response: express.Response): void {
+		response.json(SimpleAPI.listAuctionItems(request.query.id))
 	}
 
 	static make_vehicle(request: express.Request, response: express.Response) {

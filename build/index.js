@@ -17,9 +17,21 @@ class App {
     }
     static start_server() {
         const server = express();
+        server.use(express.json());
         server.get('/make-vehicle', App.make_vehicle);
+        server.post('/auctionItem', App.createAuctionItem);
+        server.get('/auctionItem', App.getAuctionItems);
         server.get('/', (req, res) => { res.send('call /make-vehicle to create a vehicle'); });
         server.listen(App.port, () => { console.log('Listening on port ' + App.port); });
+    }
+    static createAuctionItem(request, response) {
+        console.log(request.body);
+        simple_api_1.SimpleAPI.createAuctionItem(request.body).then((auctionItem) => {
+            response.json(auctionItem);
+        });
+    }
+    static getAuctionItems(request, response) {
+        response.json(simple_api_1.SimpleAPI.listAuctionItems(request.query.id));
     }
     static make_vehicle(request, response) {
         let types = [vehicles_1.GroceryGetter.name, vehicles_1.CopAttractor.name, vehicles_1.JunkHauler.name];

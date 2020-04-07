@@ -14,11 +14,11 @@ var VehicleType;
     VehicleType[VehicleType["Commercial"] = 1] = "Commercial";
 })(VehicleType = exports.VehicleType || (exports.VehicleType = {}));
 class Vehicle {
-    static generate_id() { return crypto.randomBytes(12).toString('hex'); }
     constructor(color) {
         this.vehicle_id = Vehicle.generate_id();
         this.color = color;
     }
+    static generate_id() { return crypto.randomBytes(12).toString('hex'); }
 }
 exports.Vehicle = Vehicle;
 class GroceryGetter extends Vehicle {
