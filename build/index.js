@@ -17,6 +17,12 @@ class App {
     }
     static start_server() {
         const server = express();
+        server.use(function (req, res, next) {
+            res.header("Access-Control-Allow-Origin", "*");
+            res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+            res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
+            next();
+        });
         server.use(express.json());
         server.get('/make-vehicle', App.make_vehicle);
         server.post('/auctionItem', App.createAuctionItem);
