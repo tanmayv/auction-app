@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const crypto = require("crypto");
 class AuctionItem {
-    constructor(imageUrl, minPrice, description) {
+    constructor(imageUrl, minPrice, title, description) {
         this.id = AuctionItem.generate_id();
         this.imageUrl = imageUrl;
         this.minPrice = minPrice;

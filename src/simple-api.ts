@@ -21,7 +21,7 @@ export abstract class SimpleAPI {
 	}
 
 	public static async createAuctionItem(auctionItem: AuctionItem): Promise<AuctionItem> {
-		auctionItem = new AuctionItem(auctionItem.imageUrl, auctionItem.minPrice, auctionItem.description);
+		auctionItem = new AuctionItem(auctionItem.imageUrl, auctionItem.minPrice, auctionItem.title, auctionItem.description);
 		return SimpleAPI.saveAuctionItem(auctionItem);
 	}
 

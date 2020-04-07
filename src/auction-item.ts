@@ -6,11 +6,12 @@ export class AuctionItem {
     totalBids: number;
     minPrice: number;
     imageUrl: string;
+    title: string;
     description: string;
 
     public static generate_id(): string { return `AI${crypto.randomBytes(12).toString('hex')}`; }
 
-    constructor(imageUrl, minPrice, description) {
+    constructor(imageUrl,minPrice, title, description) {
         this.id = AuctionItem.generate_id();
         this.imageUrl = imageUrl;
         this.minPrice = minPrice;
