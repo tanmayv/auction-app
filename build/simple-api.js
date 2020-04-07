@@ -16,7 +16,7 @@ class SimpleAPI {
         return SimpleAPI.save_vehicle(vehicle);
     }
     static async createAuctionItem(auctionItem) {
-        auctionItem = new auction_item_1.AuctionItem(auctionItem.imageUrl, auctionItem.minPrice);
+        auctionItem = new auction_item_1.AuctionItem(auctionItem.imageUrl, auctionItem.minPrice, auctionItem.description);
         return SimpleAPI.saveAuctionItem(auctionItem);
     }
     static listAuctionItems(id) {

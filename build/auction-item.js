@@ -2,10 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const crypto = require("crypto");
 class AuctionItem {
-    constructor(imageUrl, minPrice) {
+    constructor(imageUrl, minPrice, description) {
         this.id = AuctionItem.generate_id();
         this.imageUrl = imageUrl;
         this.minPrice = minPrice;
+        this.description = description;
         this.currentMaxBid = 0;
         this.totalBids = 0;
     }

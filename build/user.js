@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const crypto = require("crypto");
 class User {
     constructor(user) {
         this.username = user.username || User.generate_id();

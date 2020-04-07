@@ -1,3 +1,5 @@
+import * as crypto from 'crypto'
+
 export class User {
     username: string;
     name: string;
