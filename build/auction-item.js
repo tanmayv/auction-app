@@ -9,6 +9,7 @@ class AuctionItem {
         this.description = description;
         this.currentMaxBid = 0;
         this.totalBids = 0;
+        this.title = title;
     }
     static generate_id() { return `AI${crypto.randomBytes(12).toString('hex')}`; }
 }

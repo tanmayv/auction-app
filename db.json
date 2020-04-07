@@ -1,4 +1,53 @@
 {
-  "auctions": [],
-  "users": []
+  "auctions": [
+    {
+      "id": "AIf2e66f81e6774d7bcdea89dc",
+      "imageUrl": "https://picsum.photos/200/300",
+      "minPrice": 10,
+      "description": "Painted while listening to the song, \"love will tear us apart\"",
+      "currentMaxBid": 0,
+      "totalBids": 0,
+      "title": "Copy of H and B"
+    },
+    {
+      "id": "AI06b1cd9a90e72ed7730f326b",
+      "imageUrl": "https://picsum.photos/200/300",
+      "minPrice": 20,
+      "description": "Painted while listening to the song, \"love will tear us apart\"",
+      "currentMaxBid": 0,
+      "totalBids": 0
+    },
+    {
+      "id": "AIb096fa235b39216f8927aea5",
+      "imageUrl": "https://picsum.photos/200/300",
+      "minPrice": 10,
+      "description": "Painted while listening to the song, \"love will tear us apart\"",
+      "currentMaxBid": 0,
+      "totalBids": 0,
+      "title": "Hearts and butterflies"
+    }
+  ],
+  "users": [
+    {
+      "username": "USER2642d5285780",
+      "name": "lkaf",
+      "phone": "lkjasf",
+      "email": "lkjf",
+      "address": {
+        "addressLine1": "lkjsf",
+        "addressLine2": "lskjf",
+        "city": "lksjf",
+        "state": "lksfjlk",
+        "pincode": "lksjf"
+      },
+      "role": 0
+    }
+  ],
+  "bids": [
+    {
+      "id": "BID500ec6525a4a",
+      "auctionId": "AIb096fa235b39216f8927aea5",
+      "amount": "23"
+    }
+  ]
 }
